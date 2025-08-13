@@ -1,4 +1,4 @@
-export const NAME = 'Muhammad Osama Javaid';
+export const NAME = 'Muhammad Monjur Javaid';
 
 export const DESIGNATION = `MERN Stack Developer | Open Source Contributor | Tech Blogger`;
 
@@ -56,12 +56,12 @@ export const TECH_STACK = [
 ];
 
 export const CONTACTS = {
-  EMAIL: 'iosamajavaid@gmail.com',
+  EMAIL: 'iMonjurjavaid@gmail.com',
   PHONE: '+923159591822',
 };
 export const SOCIAL_LINKS = {
-  GITHUB: 'https://github.com/osamajavaid',
-  LINKEDIN: 'https://www.linkedin.com/in/iosamajavaid/',
-  TWITTER: 'https://twitter.com/iosamajavaid',
-  FACEBOOK: 'https://www.facebook.com/iosamajavaid',
+  GITHUB: 'https://github.com/Monjurjavaid',
+  LINKEDIN: 'https://www.linkedin.com/in/iMonjurjavaid/',
+  TWITTER: 'https://twitter.com/iMonjurjavaid',
+  FACEBOOK: 'https://www.facebook.com/iMonjurjavaid',
 };
