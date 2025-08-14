@@ -1,31 +1,29 @@
 const expertise = [
     {
         id: 0,
-        title: 'Full Stack Development',
-        desc: 'I am a skilled MERN stack developer with extensive experience in building robust web applications using MongoDB, Express.js, React.js, and Node.js. I possess a strong understanding of server-side rendering, API integration, and database management. With my expertise, I can deliver dynamic and efficient web solutions tailored to meet the unique requirements of clients.',
+        title: 'Laravel & Backend Development',
+        desc: 'I am a Senior Software Engineer with deep expertise in Laravel and PHP, designing scalable and secure backend systems. I have experience with REST APIs, database optimization (MySQL/PostgreSQL), complex business logic, and building modular applications for both startups and enterprise projects.'
     },
     {
         id: 1,
-        title: 'Scrum and Jira',
-        desc: "As a developer, I'm proficient in Jira and Scrum methodologies. I use Jira to simplify project management tasks like task assignment, prioritization, and progress tracking. Scrum has improved my teamwork, utilizing daily stand-ups, sprint planning, and retrospectives. My expertise ensures high-quality software products are delivered promptly.",
+        title: 'Frontend Development (Next & Vue)',
+        desc: 'I have extensive experience building dynamic and responsive web applications using React.js (including Next.js) and Vue.js. My focus is on component-driven architecture, state management, routing, and integrating frontend interfaces with backend APIs for smooth user experiences.'
     },
     {
         id: 2,
-        title: 'Designing (UI/UX)',
-        desc: 'I am proficient in using design software such as Figma, Adobe XD, and Adobe Illustrator. Through participating in hackathons and freelance work, I have gained practical experience in UI/UX design and graphic design. Designing is my passion, and it has allowed me to continue to develop my creative skills and grow in the field.',
+        title: 'Team Leadership & Agile Practices',
+        desc: 'As a Team Leader, I manage development teams using Agile methodologies and Scrum practices. I utilize Jira for task management, sprint planning, and progress tracking. I guide the team to deliver high-quality software efficiently while mentoring developers and ensuring adherence to best practices.'
     },
     {
         id: 3,
-        title: 'Github',
-        desc: "GitHub is essential for version control and collaboration. Its intuitive interface and features like pull requests and issue tracking simplify the process. Continuous integration ensures up-to-date code. GitHub is vital to my success as a developer.",
+        title: 'Payment Gateway & Fintech Integration',
+        desc: 'I have hands-on experience integrating payment gateways such as Bkash, SSLCommerz, and POS systems into web applications. I handle transaction workflows, void/refund logic, order management, and security considerations, ensuring seamless and reliable payment processing.'
     },
     {
         id: 4,
-        title: 'Open Source Contributor',
-        desc: "Open Source is the future. I usually take some time on weekend and contribute into opensource project. It gives me opportunity to learn from best developer's practices and also gives me a chance to help others and contribute into the community for the good.",
-    },
-]
+        title: 'Open Source & Community Contribution',
+        desc: 'I contribute to open-source projects and actively engage in the developer community. This allows me to learn best practices from global developers, improve my skills, and give back by sharing knowledge and contributing to useful software projects.'
+    }
+];
 
-export default function handler(req, res) {
-    res.status(200).json(expertise)
-}
+export default expertise;

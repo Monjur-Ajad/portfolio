@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="mr-1 text-base">
                         <AiFillCopyrightCircle />
                     </div>
-                    <span>{date('Y')} All Rights Reserved.</span>
+                    <span>2025 All Rights Reserved.</span>
                 </div>
                 <div className="flex items-center">
                     <a href='/' target="_blank" rel="noreferrer">Made with ❤️ by <span className='font-bold'>Monjur Ajad</span></a>

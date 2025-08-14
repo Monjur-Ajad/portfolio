@@ -7,13 +7,11 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { Skeleton } from "antd";
 import ParagraphSkeleton from "../components/Common/ParagraphSkeleton";
-
+import background from "./api/background";
 function Background() {
 
-    const { isLoading, error, data } = useQuery('background', () =>
-        axios.get('api/background')
-            .then(({ data }) => data)
-            .catch(error => console.error('Error fetching testimonials:', error)))
+    const isLoading = false
+    const data = background
 
     return (
         <BannerLayout>

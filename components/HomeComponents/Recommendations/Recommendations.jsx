@@ -2,13 +2,12 @@ import RecommendationCard from "./RecommendationCard"
 import axios from "axios";
 import { useQuery } from "react-query";
 import ParagraphSkeleton from "../../Common/ParagraphSkeleton";
+import recommendations from "../../../pages/api/recommendations";
 
 
 const Recommendations = () => {
-    const { isLoading, error, data } = useQuery('recommendations', () =>
-        axios.get('api/recommendations')
-            .then(({ data }) => data)
-            .catch(error => console.error('Error fetching testimonials:', error)))
+    const  isLoading  = false
+    const  data  = recommendations
 
 
     return (

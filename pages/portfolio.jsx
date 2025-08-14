@@ -6,13 +6,11 @@ import PortfolioCard from "../components/Portfolio/PortfolioCard";
 import axios from "axios";
 import { Skeleton } from "antd";
 import ImageAndParagraphSkeleton from "../components/Common/ImageAndParagraphSkeleton";
-
+import portfolio from "./api/portfolio";
 const Portfolio = () => {
 
-    const { isLoading, error, data } = useQuery('portfolio', () =>
-        axios.get('api/portfolio')
-            .then(({ data }) => data)
-            .catch(error => console.error('Error fetching testimonials:', error)))
+    const isLoading = false
+    const data = portfolio
     return (
         <BannerLayout>
             <div className="grid justify items-center grid-flow-row md:grid-cols-2 grid-rows-auto gap-4 px-8 my-6">

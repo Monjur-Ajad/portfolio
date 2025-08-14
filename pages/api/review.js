@@ -28,6 +28,4 @@ const review = [
         clientReview: 'I have worked with Monjur and he is very professional and excellent software  developer. I admire his speed of development and quality of work when given an assignment.'
     },
 ]
-export default function handler(req, res) {
-    res.status(200).json(review)
-}
+export default review;

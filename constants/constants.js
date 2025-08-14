@@ -1,67 +1,64 @@
-export const NAME = 'Muhammad Monjur Javaid';
+export const NAME = 'Monjurul Islam Ajad';
 
-export const DESIGNATION = `MERN Stack Developer | Open Source Contributor | Tech Blogger`;
+export const DESIGNATION = `Full Stack Developer | Laravel | PHP | NextJs | Team Lead | FinTech`;
 
 export const DETAILS = {
-  Residence: 'Pakistan',
-  City: 'Peshawar',
-  Age: '23',
+  Residence: 'Bangladesh',
+  City: 'Dhaka',
+  Age: '30',
 };
 
 export const SKILLS = [
   {
-    title: 'MERN Stack Developer',
+    title: 'Full Stack Developer',
     level: '75%',
   },
   {
-    title: 'React Developer',
-    level: '91%',
+    title: 'Laravel Developer',
+    level: '90%',
   },
-  // {
-  //   title: 'Desktop Application Developer',
-  //   level: '75%',
-  // },
+  {
+    title: 'Nextjs Developer',
+    level: '50%',
+  },
   {
     title: 'Backend Developer',
-    level: '54%',
+    level: '90%',
   },
   {
-    title: 'Technical Blogger',
-    level: '83%',
+    title: 'Team Lead',
+    level: '80%',
   },
 ];
 
 export const TECH_STACK = [
+  'PHP',
+  'Laravel',
+  'HTML',
   'JavaScript',
   'ReactJS',
   'NextJS',
   'TypeScript',
   'NodeJS',
   'Redux',
-  'Zustand',
   'CSS',
-  'SCSS',
+  'Bootstrap',
   'TailwindCSS',
-  'Ant Design',
-  'Material UI',
   'Next UI',
   'REST API',
-  'MongoDB',
   'MySQL',
   'Git',
   'GitHub',
   'Jira',
-  'Figma',
-  'Adobe XD',
 ];
 
 export const CONTACTS = {
-  EMAIL: 'iMonjurjavaid@gmail.com',
-  PHONE: '+923159591822',
+  EMAIL: 'mmajad50@gmail.com',
+  PHONE: '+8801830261941',
 };
 export const SOCIAL_LINKS = {
-  GITHUB: 'https://github.com/Monjurjavaid',
-  LINKEDIN: 'https://www.linkedin.com/in/iMonjurjavaid/',
-  TWITTER: 'https://twitter.com/iMonjurjavaid',
-  FACEBOOK: 'https://www.facebook.com/iMonjurjavaid',
+  GITHUB: 'https://github.com/Monjurul-Islam-Ajad',
+  LINKEDIN: 'https://www.linkedin.com/in/monjur-ajad/',
+  TWITTER: 'https://twitter.com/Monjurul_ajad',
+  FACEBOOK: 'https://www.facebook.com/monjur.ajad',
 };

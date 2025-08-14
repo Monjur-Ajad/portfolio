@@ -3,24 +3,30 @@ const background = [
         eduCards: [
             {
                 id: 0,
-                title: 'UET Peshawar',
-                degree: 'BS, Computer System Engineering',
-                detail: "Bachelor's Degree in Computer System Engineering from UET Peshawar.",
-                year: '2018-2022'
+                title: 'Feni University',
+                degree: 'BSc, Computer Science & Engineering',
+                detail: "Bachelor's Degree in Computer Science Engineering from Feni University.",
+                year: '2018-2021',
+                cgpa: '3.93 Out Of 4.00',
+                location: 'Feni,Bangladesh'	
             },
             {
                 id: 1,
-                title: 'Peshawar Model Degree College',
-                degree: 'HSSC, Pre Engineering',
-                detail: "Completed FSC part 1 and part 2 in Pre-Engineering from Peshawar Model Degree College.",
-                year: '2015-2017'
+                title: 'Feni Computer Institute',
+                degree: 'Diploma, Computer Science & Technology',
+                detail: "Completed Diploma from Feni Computer Institute.",
+                year: '2013-2017',
+                cgpa: '3.13 Out Of 4.00',
+                location: 'Feni,Bangladesh'	
             },
             {
                 id: 2,
-                title: 'Falcon Academy',
-                degree: 'SSC, Science Subjects',
-                detail: "Completed SSC part 1 and part 2 in Science subjects from Falcon Academy Seni Gumbat Kohat",
-                year: '2013-2015'
+                title: 'Al Jameyatul Falahia Kamil Madrasha',
+                degree: 'SSC/Dhakil, General',
+                detail: "Completed SSC/Dhakil from Al Jameyatul Falahia Kamil Madrasha",
+                year: '2011-2013',
+                cgpa: '5.00 Out Of 5.00',
+                location: 'Feni,Bangladesh'	
             },
         ]
     },
@@ -28,30 +34,30 @@ const background = [
         expCards: [
             {
                 id: 1,
-                title: 'JMM Technologies',
-                role: 'Frontend Developer',
-                url: 'https://jmm.ltd/',
-                desc: 'As a frontend developer, I use React, Next & JavaScript to build user interfaces for web applications.',
-                year: '02/2023 - Present',
-                location: 'Peshawar, Pakistan'
+                title: 'Softrobotics Bangladesh Ltd (MultiNational Turkey)',
+                role: 'Senior Software Engineer (Team Leader)',
+                url: 'https://softrobotics.com.bd/',
+                desc: 'As a Team Leader and Laravel developer, I use Laravel, NextJs & JavaScript to build user interfaces for web applications.',
+                year: '11/2023 - Present',
+                location: 'Dhaka, Bangladesh'
             },
             {
                 id: 2,
-                title: 'HauzaTech',
-                role: 'Internee',
-                url: 'no website',
-                desc: 'As an Internee, I learned how to use React & JavaScript to build interactive websites.',
-                year: '02/2023 - Present',
-                location: 'Peshawar, Pakistan'
+                title: 'Dhaka Jacos  (MultiNational Japan)',
+                role: 'Software Engineer',
+                url: 'https://dhakajacos.com.bd/',
+                desc: 'As a Laravel developer, I use Laravel & Vue js for web applications.',
+                year: '12/2021 - 10/2023',
+                location: 'Dhaka, Bangladesh'
             },
             {
                 id: 3,
-                title: 'Encoder Bytes',
-                role: 'PHP Developer',
-                url: 'https://www.encoderbytes.com/',
-                desc: "I work there as a PHP developer, there I learned how to do CRUD'S operations in PHP, also I worked on Firebase",
-                year: '09/2020 - 02/2021',
-                location: 'Peshawar, Pakistan'
+                title: 'Skill Based IT (SBIT)',
+                role: 'Software Enginner',
+                url: 'https://www.sbit.com.bd/',
+                desc: "I work there as a Laravel developer, i am worked huge e-commerce ,Pos , ERP etc projects.",
+                year: '06/2018 - 11/2021',
+                location: 'Dhaka, Bangladesh'
             },
 
         ]
@@ -59,6 +65,4 @@ const background = [
 ]
 
 
-export default function handler(req, res) {
-    res.status(200).json(background)
-}
+export default background;

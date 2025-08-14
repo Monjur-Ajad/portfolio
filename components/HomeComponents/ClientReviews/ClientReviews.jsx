@@ -2,15 +2,13 @@ import ReviewCard from "./ReviewCard"
 import axios from "axios";
 import { useQuery } from "react-query";
 import ParagraphSkeleton from "../../Common/ParagraphSkeleton";
-
+import review from "../../../pages/api/review";
 
 
 const ClientReviews = () => {
 
-    const { isLoading, error, data } = useQuery('review', () =>
-        axios.get('api/review')
-            .then(({ data }) => data)
-            .catch(error => console.error('Error fetching testimonials:', error)))
+    const data = review
+    const isLoading =false
 
 
     return (

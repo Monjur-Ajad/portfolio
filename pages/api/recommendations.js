@@ -33,6 +33,4 @@ const recommendationCard = [
     linkednURL: "https://www.linkedin.com/in/muhammadullahafridi/"
   },
 ]
-export default function handler(req, res) {
-  res.status(200).json(recommendationCard)
-}
+export default recommendationCard;

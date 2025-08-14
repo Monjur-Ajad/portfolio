@@ -20,29 +20,29 @@ const Contact = () => {
                         <div className="card_stylings w-full md:w-1/2 p-5 md:p-6 lg:p-8 flex flex-col gap-y-4">
                             <div className="flex justify-between items-center">
                                 <span className='md:text-base'>Country:</span>
-                                <span className='text-LightGray md:text-sm'>Pakistan</span>
+                                <span className='text-LightGray md:text-sm'>Bangladesh</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className='md:text-base'>City:</span>
-                                <span className='text-LightGray md:text-sm'>Peshawar</span>
+                                <span className='text-LightGray md:text-sm'>Dhaka</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className='md:text-base'>Company:</span>
-                                <span className='text-LightGray md:text-sm'>visualsX</span>
+                                <span className='text-LightGray md:text-sm'>Softrobotics Bangldesh ltd</span>
                             </div>
                         </div>
                         <div className="card_stylings rounded-xl w-full md:w-1/2 p-5 md:p-6 lg:p-8 flex flex-col gap-y-4">
                             <div className="flex justify-between items-center">
                                 <span className='md:text-base'>Email:</span>
-                                <span className='text-LightGray text-sm'>iMonjurjavaid@gmail.com</span>
+                                <span className='text-LightGray text-sm'>mmajad50@gmail.com</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className='md:text-base'>Linkedin:</span>
-                                <span className='text-LightGray text-sm'>iMonjurjavaid</span>
+                                <span className='text-LightGray text-sm'>monjur-ajad</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className='md:text-base'>Phone:</span>
-                                <span className='text-LightGray text-sm'>+92 (315) 9591822</span>
+                                <span className='text-LightGray text-sm'>+(880)1830-261941</span>
                             </div>
                         </div>
                     </div>
@@ -51,9 +51,9 @@ const Contact = () => {
                     <a className='hover:scale-125 ease-in-out duration-700' href="" target='_blank' rel="noreferrer"><HiMail /></a>
                     <a className='hover:scale-125 ease-in-out duration-700' href="https://github.com/Monjurul-Islam-Ajad" target='_blank' rel="noreferrer"><FaGithub /></a>
                     <a className='hover:scale-125 ease-in-out duration-700' href="https://www.linkedin.com/in/monjur-ajad/" target='_blank' rel="noreferrer"><FaLinkedin /></a>
-                    {/* <a className='hover:scale-125 ease-in-out duration-700' href="https://x.com/iMonjurjavaid" target='_blank' rel="noreferrer"><FaTwitter /></a> */}
-                    <a className='hover:scale-125 ease-in-out duration-700 hidden sm:block' href="#" target='_blank' rel="noreferrer"><Fiverr_Icon /></a>
-                    <a className='hover:scale-125 ease-in-out duration-700 text-2xl sm:text-4xl mt-1' href="#" target='_blank' rel="noreferrer"><SiUpwork /></a>
+                    <a className='hover:scale-125 ease-in-out duration-700' href="https://x.com/Monjurul_ajad" target='_blank' rel="noreferrer"><FaTwitter /></a>
+                    {/* <a className='hover:scale-125 ease-in-out duration-700 hidden sm:block' href="#" target='_blank' rel="noreferrer"><Fiverr_Icon /></a> */}
+                    {/* <a className='hover:scale-125 ease-in-out duration-700 text-2xl sm:text-4xl mt-1' href="#" target='_blank' rel="noreferrer"><SiUpwork /></a> */}
                 </div>
 
 
