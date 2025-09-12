@@ -92,27 +92,27 @@ const portfolio = [
             },
         ]
     },
-    {
-        id: 0,
-        projectName: "E-commerce",
-        url: "https://toolbari.com/",
-        image: "/projects/toolbari.png",
-        projectDetail: "Toolbari Commerce is a modern, component-driven e-commerce web app focused on speed, accessibility, and a clean buying flow. It supports catalog browsing, advanced search & filters, secure checkout, real-time inventory, and role-based administration.",
-        technologiesUsed: [
-            {
-                tech: "NextJs"
-            },
-            {
-                tech: "Laravel"
-            },
-            {
-                tech: "REST API's"
-            },
-            {
-                tech: "TailwindCSS"
-            },
-        ]
-    },
+    // {
+    //     id: 0,
+    //     projectName: "E-commerce",
+    //     url: "https://toolbari.com/",
+    //     image: "/projects/toolbari.png",
+    //     projectDetail: "Toolbari Commerce is a modern, component-driven e-commerce web app focused on speed, accessibility, and a clean buying flow. It supports catalog browsing, advanced search & filters, secure checkout, real-time inventory, and role-based administration.",
+    //     technologiesUsed: [
+    //         {
+    //             tech: "NextJs"
+    //         },
+    //         {
+    //             tech: "Laravel"
+    //         },
+    //         {
+    //             tech: "REST API's"
+    //         },
+    //         {
+    //             tech: "TailwindCSS"
+    //         },
+    //     ]
+    // },
     {
         id: 2,
         projectName: "Courier Logistic System",
