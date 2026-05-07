@@ -57,8 +57,8 @@ export const CONTACTS = {
   PHONE: '+8801830261941',
 };
 export const SOCIAL_LINKS = {
-  GITHUB: 'https://github.com/Monjurul-Islam-Ajad',
-  LINKEDIN: 'https://www.linkedin.com/in/monjur-ajad/',
+  GITHUB: 'https://github.com/Monjur-Ajad',
+  LINKEDIN: 'https://www.linkedin.com/in/monjurul-islam-ajad/',
   TWITTER: 'https://twitter.com/Monjurul_ajad',
   FACEBOOK: 'https://www.facebook.com/monjur.ajad',
 };
