@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { HiHome, HiUser, HiCode, HiCube, HiBriefcase, HiFolderOpen, HiMail, HiBadgeCheck } from 'react-icons/hi';
-import {FaLinkedin, FaGithub, FaTwitter} from 'react-icons/fa';
-import {CONTACTS, SOCIAL_LINKS} from '../constants/constants';
+import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { CONTACTS, SOCIAL_LINKS } from '../constants/constants';
 import Link from 'next/link';
 
 export default function Layout({ children, title, description, canonical }) {
@@ -14,7 +14,7 @@ export default function Layout({ children, title, description, canonical }) {
   const defaultDescription = "Portfolio of Monjurul Islam Ajad - Senior Software Engineer, Team Lead, and FinTech Expert specializing in Laravel, Next.js, POS, and Inventory systems.";
   const baseUrl = "https://monjurajad.com";
   const currentUrl = canonical || `${baseUrl}${router.pathname}`;
-  
+
   const keywords = "tech expert, engineer, developer, ecommerce developer, team lead, fintech expert, fintech, pos, inventory, monjur, ajad, monjurul islam, monjurul islam ajad";
 
   useEffect(() => {
@@ -24,6 +24,19 @@ export default function Layout({ children, title, description, canonical }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Track Site Visits
+  useEffect(() => {
+    const trackVisit = async () => {
+      try {
+        const pageName = title || router.pathname.replace('/', '') || 'Home';
+        await fetch(`https://monjurajad.com/api/views.php?page=${encodeURIComponent(pageName)}`);
+      } catch (error) {
+        console.error('Tracking failed:', error);
+      }
+    };
+    trackVisit();
+  }, [router.pathname]);
 
   const navItems = [
     { name: 'Home', href: '/', icon: <HiHome /> },
@@ -43,13 +56,13 @@ export default function Layout({ children, title, description, canonical }) {
         <meta name="description" content={description || defaultDescription} />
         <meta name="keywords" content={keywords} />
         <link rel="canonical" href={currentUrl} />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content={title ? `${title} | Monjur Ajad` : defaultTitle} />
         <meta property="og:description" content={description || defaultDescription} />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:type" content="website" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title ? `${title} | Monjur Ajad` : defaultTitle} />
@@ -65,9 +78,9 @@ export default function Layout({ children, title, description, canonical }) {
               {navItems.map((item) => {
                 const isActive = router.pathname === item.href;
                 return (
-                  <Link 
-                    key={item.name} 
-                    href={item.href} 
+                  <Link
+                    key={item.name}
+                    href={item.href}
                     className={`relative flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 group
                       ${isActive ? 'text-emerald-400 bg-white/5 shadow-[0_0_20px_rgba(16,185,129,0.1)]' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                   >
@@ -77,12 +90,12 @@ export default function Layout({ children, title, description, canonical }) {
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] hidden md:block">
                       {item.name}
                     </span>
-                    
+
                     {/* Active Indicator Dot */}
                     {isActive && (
                       <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></span>
                     )}
-                    
+
                     {/* Hover Glow Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-emerald-500/5 to-emerald-500/0 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
                   </Link>

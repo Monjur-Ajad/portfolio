@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaShieldAlt, FaRocket, FaGlobe } from 'react-icons/fa';
 import { HiMail, HiUser, HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { Modal } from 'antd';
@@ -6,6 +7,48 @@ import { CONTACTS, SOCIAL_LINKS } from '../constants/constants';
 
 const Contact = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        company: '',
+        service: 'Select a service',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Basic validation
+        if (!formData.name || !formData.email || !formData.message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        setLoading(true);
+        try {
+            const response = await axios.post('http://localhost/portfolio-backend/api/contact.php', formData);
+            if (response.status === 200 || response.status === 201) {
+                setIsOpen(true);
+                setFormData({
+                    name: '',
+                    email: '',
+                    company: '',
+                    service: 'Select a service',
+                    message: ''
+                });
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Something went wrong. Please try again later.');
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className="min-h-screen bg-white text-slate-900 selection:bg-[#f15a24] selection:text-white">
@@ -114,27 +157,55 @@ const Contact = () => {
                     <div className="bg-white p-8 md:p-16 rounded-[4rem] border border-slate-100 shadow-2xl shadow-slate-100 relative">
                         <h3 className="text-3xl font-bold text-slate-900 mb-12">Drop us a line</h3>
 
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-bold text-slate-400 ml-1">Name *</label>
-                                    <input type="text" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900" placeholder="Write your name" />
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900"
+                                        placeholder="Write your name"
+                                        required
+                                    />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-bold text-slate-400 ml-1">Email *</label>
-                                    <input type="email" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900" placeholder="Write your email" />
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900"
+                                        placeholder="Write your email"
+                                        required
+                                    />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-bold text-slate-400 ml-1">Company Name</label>
-                                    <input type="text" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900" placeholder="Write company name" />
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        value={formData.company}
+                                        onChange={handleChange}
+                                        className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900"
+                                        placeholder="Write company name"
+                                    />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-bold text-slate-400 ml-1">Service</label>
-                                    <select className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-500">
-                                        <option>Select a service</option>
+                                    <select
+                                        name="service"
+                                        value={formData.service}
+                                        onChange={handleChange}
+                                        className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-500"
+                                    >
+                                        <option disabled>Select a service</option>
                                         <option>FinTech Architecture</option>
                                         <option>Full-Stack Development</option>
                                         <option>System Consultation</option>
@@ -144,15 +215,25 @@ const Contact = () => {
 
                             <div className="space-y-2">
                                 <label className="text-[10px] font-bold text-slate-400 ml-1">Message Content *</label>
-                                <textarea rows={4} className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900 resize-none" placeholder="Tell us about your requirements..." />
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    rows={4}
+                                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900 resize-none"
+                                    placeholder="Tell us about your requirements..."
+                                    required
+                                />
                             </div>
 
 
                             <button
-                                onClick={() => setIsOpen(true)}
-                                className="w-full py-5 bg-[#f15a24] text-white font-bold rounded-2xl hover:bg-[#d94e1c] transition-all flex items-center justify-center gap-3 group shadow-xl shadow-orange-200"
+                                type="submit"
+                                disabled={loading}
+                                className={`w-full py-5 bg-[#f15a24] text-white font-bold rounded-2xl hover:bg-[#d94e1c] transition-all flex items-center justify-center gap-3 group shadow-xl shadow-orange-200 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
                             >
-                                Send Message <HiOutlineArrowNarrowRight className="group-hover:translate-x-2 transition-transform" />
+                                {loading ? 'Sending...' : 'Send Message'}
+                                {!loading && <HiOutlineArrowNarrowRight className="group-hover:translate-x-2 transition-transform" />}
                             </button>
                         </form>
                     </div>
@@ -169,14 +250,14 @@ const Contact = () => {
             >
                 <div className='flex flex-col items-center justify-center p-16 text-center bg-white rounded-[3rem]'>
                     <div className='w-24 h-24 bg-orange-50 rounded-full flex items-center justify-center mb-8 animate-bounce text-4xl'>
-                        🚀
+                        🎉
                     </div>
-                    <h2 className='text-slate-900 font-bold text-4xl mb-4 tracking-tighter'>ALMOST LIVE!</h2>
+                    <h2 className='text-slate-900 font-bold text-4xl mb-4 tracking-tighter'>MESSAGE SENT!</h2>
                     <p className='text-slate-500 mb-10 font-medium leading-relaxed'>
-                        Your message has been captured. We are currently optimizing our direct routing system.
+                        Thank you for reaching out. Your message has been successfully delivered. We'll get back to you shortly.
                     </p>
                     <button onClick={() => setIsOpen(false)} className="px-12 py-4 bg-[#f15a24] text-white font-bold rounded-2xl hover:bg-[#d94e1c] transition-all">
-                        UNDERSTOOD
+                        GREAT!
                     </button>
                 </div>
             </Modal>

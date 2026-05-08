@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect /api/views to /api/views.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^api/views$ api/views.php [L]
+
+# Redirect /api/contact to /api/contact.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^api/contact$ api/contact.php [L]

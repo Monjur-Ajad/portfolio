@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-backend",
+  "version": "1.0.0",
+  "description": "Simple Express API for view counting and contact forms",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.1.1"
+  }
+}
