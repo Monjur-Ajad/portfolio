@@ -31,7 +31,7 @@ const Contact = () => {
 
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost/portfolio-backend/api/contact.php', formData);
+            const response = await axios.post('http://monjurajad.com/backend/api/contact.php', formData);
             if (response.status === 200 || response.status === 201) {
                 setIsOpen(true);
                 setFormData({

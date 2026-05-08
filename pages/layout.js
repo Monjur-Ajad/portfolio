@@ -30,7 +30,7 @@ export default function Layout({ children, title, description, canonical }) {
     const trackVisit = async () => {
       try {
         const pageName = title || router.pathname.replace('/', '') || 'Home';
-        await fetch(`https://monjurajad.com/api/views.php?page=${encodeURIComponent(pageName)}`);
+        await fetch(`https://monjurajad.com/backend/api/views.php?page=${encodeURIComponent(pageName)}`);
       } catch (error) {
         console.error('Tracking failed:', error);
       }
