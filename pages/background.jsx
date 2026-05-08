@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Edu_Card from "../components/Background/Edu_Card";
 import Exp_Card from "../components/Background/Exp_Card";
-import Footer from "../components/Footer";
 import ParagraphSkeleton from "../components/Common/ParagraphSkeleton";
 import background from "./api/background";
 
@@ -10,9 +9,9 @@ function Background() {
     const data = background
 
     return (
-        <div className="container mx-auto px-6 py-20">
+        <div className="container mx-auto px-6 py-20 min-h-screen">
             <div className="flex flex-col mb-16">
-                <div className="text-Green text-[10px] uppercase tracking-[0.4em] font-black mb-4">Journey</div>
+                <div className="text-emerald-500 text-[10px] uppercase tracking-[0.4em] font-black mb-4">Journey</div>
                 <h1 className="text-4xl md:text-7xl font-black tracking-tighter leading-none mb-6">CAREER <br /> <span className="text-gray-600">PATH.</span></h1>
             </div>
 
@@ -59,10 +58,13 @@ function Background() {
     );
 }
 
-export default Background;
-
-        </BannerLayout >
-    );
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Career Path",
+            description: "Explore the academic and professional journey of Monjurul Islam Ajad, featuring educational milestones and career experiences.",
+        },
+    }
 }
 
 export default Background;

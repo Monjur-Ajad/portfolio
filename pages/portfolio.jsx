@@ -34,4 +34,13 @@ const Portfolio = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Portfolio",
+            description: "A showcase of technical projects and digital solutions developed by Monjur Ajad.",
+        },
+    }
+}
+
 export default Portfolio;
