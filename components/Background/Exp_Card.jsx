@@ -1,27 +1,36 @@
-import React from 'react'
-import CardLayout from '../Common/CardLayout'
-
 const Exp_Card = ({ data }) => {
     return (
-        <CardLayout>
-            <div className="card_stylings transition px-8 py-10 ">
-                <div className="flex-initial text-[17px] text-Snow font-medium">{data.title}</div>
-                <div className="text-sm text-LightGray font-normal italic mt-1 ">
-                    {data.role}
+        <div className="glass-card p-10 flex flex-col gap-4 group hover:bg-white/[0.05] transition-all duration-500 rounded-[2rem]">
+            <div className="flex justify-between items-start">
+                <div>
+                    <h3 className="text-2xl font-black tracking-tighter leading-tight group-hover:text-Green transition-colors">
+                        {data.title}
+                    </h3>
+                    <div className="text-sm text-Green font-bold tracking-widest uppercase mt-1">
+                        {data.role}
+                    </div>
                 </div>
-                <div className="text-LightGray text-xs opacity-50 font-normal italic">
-                    <a href={`${data.url}`} target="_blank" rel="noreferrer">
-                        {data.url}
-                    </a>
-                </div>
-                <div className="text-LightGray text-sm font-normal mt-4 text-justify">
-                    {data.desc}
-                </div>
-                <div className="flex justify-between text-LightGray bg-DeepNightBlack w-full h-auto text-xs rounded-full py-3 px-6 mt-4 font-normal opacity-50">
-                    <div>{data.year}</div> <div>{data.location}</div>
+                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 bg-white/5 px-3 py-1 rounded-full">
+                    {data.year}
                 </div>
             </div>
-        </CardLayout>
+
+            <div className="text-gray-500 text-[10px] uppercase tracking-widest font-bold">
+                <a href={data.url} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+                    {data.url.replace('https://', '')}
+                </a>
+            </div>
+
+            <p className="text-gray-400 text-sm leading-relaxed mt-4">
+                {data.desc}
+            </p>
+
+            <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-gray-600">
+                <span>{data.location}</span>
+                <span className="w-1 h-1 bg-gray-600 rounded-full"></span>
+                <span>Full Time</span>
+            </div>
+        </div>
     )
 }
 

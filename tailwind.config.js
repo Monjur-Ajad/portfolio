@@ -8,6 +8,10 @@ module.exports = {
     extend: {
       colors: {
         Green: "#1fdf64",
+        emerald: "#10b981",
+        primary: "#10b981",
+        cyan: "#06b6d4",
+        secondary: "#06b6d4",
         Black: "#000",
         DeepNightBlack: "#121212",
         MidNightBlack: "#181818",
@@ -18,6 +22,7 @@ module.exports = {
         SilverGray: "#B3B3B3",
         Snow: "#ffffff",
       },
+
       fontFamily: {
         'cascadia-normal': ['cascadia-normal'],
         'circular': ['circular-normal', 'sans-serif'],

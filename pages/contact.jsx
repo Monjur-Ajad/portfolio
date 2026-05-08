@@ -1,120 +1,187 @@
 import { useState } from 'react';
-import BannerLayout from '../components/Common/BannerLayout';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { SiUpwork } from 'react-icons/si'
-import { HiMail, HiUser } from 'react-icons/hi'
-import { BsChatTextFill } from 'react-icons/bs'
-import Fiverr_Icon from '../components/Fiverr_Icon';
-import Footer from '../components/Footer';
+import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaShieldAlt, FaRocket, FaGlobe } from 'react-icons/fa';
+import { HiMail, HiUser, HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { Modal } from 'antd';
+import { CONTACTS, SOCIAL_LINKS } from '../constants/constants';
 
 const Contact = () => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <BannerLayout>
-            <div className=" px-4 py-2">
-                <div className="my-6 text-Snow flex flex-col gap-y-5">
-                    <h1 className='text-lg font-bold'>Contact Information</h1>
-                    <div className="flex flex-col md:flex-row items-center gap-5 text-xs">
-                        <div className="card_stylings w-full md:w-1/2 p-5 md:p-6 lg:p-8 flex flex-col gap-y-4">
-                            <div className="flex justify-between items-center">
-                                <span className='md:text-base'>Country:</span>
-                                <span className='text-LightGray md:text-sm'>Bangladesh</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <span className='md:text-base'>City:</span>
-                                <span className='text-LightGray md:text-sm'>Dhaka</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <span className='md:text-base'>Company:</span>
-                                <span className='text-LightGray md:text-sm'>Softrobotics Bangldesh ltd</span>
-                            </div>
-                        </div>
-                        <div className="card_stylings rounded-xl w-full md:w-1/2 p-5 md:p-6 lg:p-8 flex flex-col gap-y-4">
-                            <div className="flex justify-between items-center">
-                                <span className='md:text-base'>Email:</span>
-                                <span className='text-LightGray text-sm'>mmajad50@gmail.com</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <span className='md:text-base'>Linkedin:</span>
-                                <span className='text-LightGray text-sm'>monjur-ajad</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <span className='md:text-base'>Phone:</span>
-                                <span className='text-LightGray text-sm'>+(880)1830-261941</span>
-                            </div>
-                        </div>
-                    </div>
+        <div className="min-h-screen bg-white text-slate-900 selection:bg-[#f15a24] selection:text-white">
+            {/* Dark Navy Header */}
+            <section className="bg-[#003152] py-32 text-center text-white px-6">
+                <div className="container mx-auto">
+                    <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                        Let's Build Smarter, <span className="text-[#f15a24]">Together.</span>
+                    </h1>
+                    <p className="text-slate-300 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+                        Get in touch with the leading software engineering and technical resource hub.
+                    </p>
                 </div>
-                <div className="h-16 w-full card_stylings text-xl sm:text-3xl flex gap-x-8 sm:gap-x-16 items-center justify-center text-Snow">
-                    <a className='hover:scale-125 ease-in-out duration-700' href="" target='_blank' rel="noreferrer"><HiMail /></a>
-                    <a className='hover:scale-125 ease-in-out duration-700' href="https://github.com/Monjurul-Islam-Ajad" target='_blank' rel="noreferrer"><FaGithub /></a>
-                    <a className='hover:scale-125 ease-in-out duration-700' href="https://www.linkedin.com/in/monjur-ajad/" target='_blank' rel="noreferrer"><FaLinkedin /></a>
-                    <a className='hover:scale-125 ease-in-out duration-700' href="https://x.com/Monjurul_ajad" target='_blank' rel="noreferrer"><FaTwitter /></a>
-                    {/* <a className='hover:scale-125 ease-in-out duration-700 hidden sm:block' href="#" target='_blank' rel="noreferrer"><Fiverr_Icon /></a> */}
-                    {/* <a className='hover:scale-125 ease-in-out duration-700 text-2xl sm:text-4xl mt-1' href="#" target='_blank' rel="noreferrer"><SiUpwork /></a> */}
-                </div>
+            </section>
 
+            <section className="py-24 container mx-auto px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
-                <div className="my-12 w-full h-auto text-Snow">
-                    <h1 className='text-lg font-bold'>Get In Touch</h1>
-                    <div className="mt-4 py-8 px-8 bg-EveningBlack rounded-xl text-sm">
+                    {/* Left Column: Information */}
+                    <div className="space-y-12">
                         <div>
-                            <div className="flex flex-col w-full">
-                                <div className="userIcon relative mb-6">
-                                    <div id="icon" className="absolute inset-y-0 left-0 flex items-center pl-3 text-xl pointer-events-none">
-                                        <HiUser />
-                                    </div>
-                                    <input type="text" className="input_stylings" placeholder="Name" />
+                            <h2 className="text-4xl font-bold text-slate-900 mb-6">Scale your engineering team.</h2>
+                            <p className="text-slate-500 text-lg leading-relaxed max-w-md">
+                                Direct access to senior full-stack expertise and secure FinTech architectural governance.
+                            </p>
+                        </div>
+
+                        {/* Benefits List */}
+                        <div className="space-y-8">
+                            <div className="flex gap-6 items-start">
+                                <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 flex-shrink-0">
+                                    <FaRocket />
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-slate-900 text-lg">Managed Scaling</h4>
+                                    <p className="text-slate-500 text-sm">Senior engineers available for immediate impact.</p>
                                 </div>
                             </div>
-
-                            <div className="flex flex-col w-full">
-                                <div className="mailIcon relative mb-6">
-                                    <div id="icon" className="absolute inset-y-0 left-0 flex items-center text-xl pl-3 pointer-events-none">
-                                        <HiMail />
-                                    </div>
-                                    <input type="text" className="input_stylings" placeholder="Email" />
+                            <div className="flex gap-6 items-start">
+                                <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                                    <FaShieldAlt />
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-slate-900 text-lg">FinTech Governance</h4>
+                                    <p className="text-slate-500 text-sm">Architectural standards managed locally by Monjur.</p>
                                 </div>
                             </div>
-
-                            <div className="flex flex-col w-full">
-                                <div className="textIcon relative mb-6">
-                                    <div id="icon" className="absolute top-3 left-0 flex items-center text-lg pl-3 pointer-events-none">
-                                        <BsChatTextFill />
-                                    </div>
-                                    <textarea rows={6} cols={50} className="input_stylings" placeholder="Message" />
+                            <div className="flex gap-6 items-start">
+                                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
+                                    <FaGlobe />
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-slate-900 text-lg">Global Execution</h4>
+                                    <p className="text-slate-500 text-sm">High-standard output with incredible efficiency.</p>
                                 </div>
                             </div>
+                        </div>
 
-                            <div className="my-4">
-                                <button onClick={() => setIsOpen(true)} className="button"> SEND MESSAGE </button>
+                        {/* Direct Contact Card */}
+                        <div className="p-10 bg-slate-50 rounded-[3rem] border border-slate-100 shadow-sm space-y-8">
+                            <div className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-500 mb-4">Direct Contact</div>
+
+                            <a href={`mailto:${CONTACTS.EMAIL}`} className="flex items-center gap-6 group">
+                                <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-indigo-500 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                                    <HiMail />
+                                </div>
+                                <div>
+                                    <div className="text-[9px] font-black uppercase text-slate-400 mb-1">Email Us</div>
+                                    <div className="font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">{CONTACTS.EMAIL}</div>
+                                </div>
+                            </a>
+
+                            <a href={`tel:${CONTACTS.PHONE}`} className="flex items-center gap-6 group">
+                                <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-indigo-500 shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                                    <FaPhone />
+                                </div>
+                                <div>
+                                    <div className="text-[9px] font-black uppercase text-slate-400 mb-1">Call Us</div>
+                                    <div className="font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">{CONTACTS.PHONE}</div>
+                                </div>
+                            </a>
+
+                            <a href={`https://wa.me/${CONTACTS.PHONE.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" className="flex items-center gap-6 group">
+                                <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-emerald-500 shadow-sm group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                                    <FaWhatsapp />
+                                </div>
+                                <div>
+                                    <div className="text-[9px] font-black uppercase text-slate-400 mb-1">WhatsApp</div>
+                                    <div className="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">{CONTACTS.PHONE}</div>
+                                </div>
+                            </a>
+
+                            <div className="flex items-center gap-6 group border-t border-slate-200 pt-8">
+                                <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-slate-400 shadow-sm">
+                                    <FaMapMarkerAlt />
+                                </div>
+                                <div>
+                                    <div className="text-[9px] font-black uppercase text-slate-400 mb-1">Headquarters</div>
+                                    <div className="font-bold text-slate-900">Dhaka, Bangladesh</div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    {/* Right Column: Contact Form */}
+                    <div className="bg-white p-8 md:p-16 rounded-[4rem] border border-slate-100 shadow-2xl shadow-slate-100 relative">
+                        <h3 className="text-3xl font-bold text-slate-900 mb-12">Drop us a line</h3>
+
+                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold text-slate-400 ml-1">Name *</label>
+                                    <input type="text" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900" placeholder="Write your name" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold text-slate-400 ml-1">Email *</label>
+                                    <input type="email" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900" placeholder="Write your email" />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold text-slate-400 ml-1">Company Name</label>
+                                    <input type="text" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900" placeholder="Write company name" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold text-slate-400 ml-1">Service</label>
+                                    <select className="w-full bg-slate-50 border border-slate-100 rounded-xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-500">
+                                        <option>Select a service</option>
+                                        <option>FinTech Architecture</option>
+                                        <option>Full-Stack Development</option>
+                                        <option>System Consultation</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-[10px] font-bold text-slate-400 ml-1">Message Content *</label>
+                                <textarea rows={4} className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:bg-white focus:border-[#f15a24] transition-all font-medium text-slate-900 resize-none" placeholder="Tell us about your requirements..." />
+                            </div>
+
+
+                            <button
+                                onClick={() => setIsOpen(true)}
+                                className="w-full py-5 bg-[#f15a24] text-white font-bold rounded-2xl hover:bg-[#d94e1c] transition-all flex items-center justify-center gap-3 group shadow-xl shadow-orange-200"
+                            >
+                                Send Message <HiOutlineArrowNarrowRight className="group-hover:translate-x-2 transition-transform" />
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            {/* success modal */}
+            </section>
+
             <Modal
-                className='card_stylings backdrop-blur-3xl drop-shadow-2xl'
-                // wrapClassName='bg-red-800'
                 centered
                 open={isOpen}
                 footer={null}
-                closable={false}
-                onOk={() => setIsOpen(false)}
                 onCancel={() => setIsOpen(false)}
+                className="premium-modal"
+                bodyStyle={{ padding: 0 }}
             >
-                <div className='flex flex-col items-center justify-center'>
-                    <h1 className='text-Green font-bold text-2xl'>In Progress</h1>
-                    <a className='underline text-Snow' target='_blank' href='https://github.com/Monjurul-Islam-Ajad'>Be the one to integrate this!</a>
+                <div className='flex flex-col items-center justify-center p-16 text-center bg-white rounded-[3rem]'>
+                    <div className='w-24 h-24 bg-orange-50 rounded-full flex items-center justify-center mb-8 animate-bounce text-4xl'>
+                        🚀
+                    </div>
+                    <h2 className='text-slate-900 font-bold text-4xl mb-4 tracking-tighter'>ALMOST LIVE!</h2>
+                    <p className='text-slate-500 mb-10 font-medium leading-relaxed'>
+                        Your message has been captured. We are currently optimizing our direct routing system.
+                    </p>
+                    <button onClick={() => setIsOpen(false)} className="px-12 py-4 bg-[#f15a24] text-white font-bold rounded-2xl hover:bg-[#d94e1c] transition-all">
+                        UNDERSTOOD
+                    </button>
                 </div>
             </Modal>
-            <Footer />
-        </BannerLayout>
+        </div>
+    );
+};
 
-    )
-}
-
-export default Contact
+export default Contact;

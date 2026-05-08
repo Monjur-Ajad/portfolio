@@ -1,34 +1,34 @@
-import React from 'react'
-import CardLayout from '../Common/CardLayout'
-
 const Edu_Card = ({ data }) => {
     return (
-        <CardLayout className='keepItEmpty'>
-            <div className="card_stylings transition px-8 py-10">
-                <div className="flex justify-between">
-                    <div className="flex-initial text-[17px] text-Snow font-medium">{data.title}</div>
-                    <div className="flex justify-items-center justify-center text-LightGray bg-DeepNightBlack ml-2 w-32 lg:w-28 h-10 text-xs rounded-full py-3 font-normal opacity-50 text-center">
-                        {data.year}
-                    </div>
-                </div>
-                <div className="flex justify-between items-center mt-1">
-                    <div className="text-xs text-LightGray font-normal italic">
+        <div className="glass-card p-10 flex flex-col gap-4 group hover:bg-white/[0.05] transition-all duration-500 rounded-[2rem]">
+            <div className="flex justify-between items-start">
+                <div>
+                    <h3 className="text-2xl font-black tracking-tighter leading-tight group-hover:text-Green transition-colors">
+                        {data.title}
+                    </h3>
+                    <div className="text-sm text-gray-500 font-bold tracking-widest uppercase mt-1">
                         {data.degree}
                     </div>
-                    {data.cgpa && (
-                        <div className="text-xs text-LightGray font-normal">
-                            CGPA: {data.cgpa}
-                        </div>
-                    )}
                 </div>
-                <div className="text-xs text-LightGray font-normal mt-2">
-                    {data.location}
-                </div>
-                <div className="text-LightGray text-sm font-normal mt-4">
-                    {data.detail}
+                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-Green bg-Green/5 px-3 py-1 rounded-full border border-Green/10">
+                    {data.year}
                 </div>
             </div>
-        </CardLayout>
+
+            <p className="text-gray-400 text-sm leading-relaxed mt-4">
+                {data.detail}
+            </p>
+
+            <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-gray-600">
+                <span>{data.location}</span>
+                {data.cgpa && (
+                    <div className="flex items-center gap-2">
+                        <span className="w-1 h-1 bg-gray-600 rounded-full"></span>
+                        <span>CGPA: {data.cgpa}</span>
+                    </div>
+                )}
+            </div>
+        </div>
     )
 }
 
