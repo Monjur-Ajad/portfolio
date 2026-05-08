@@ -106,4 +106,13 @@ const Certificates = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Certificates",
+            description: "Professional certifications and academic achievements of Monjurul Islam Ajad in Software Engineering and Secure Coding.",
+        },
+    }
+}
+
 export default Certificates;

@@ -8,7 +8,7 @@ const queryClient = new QueryClient()
 export default function App({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Layout>
+      <Layout {...pageProps}>
         <Component {...pageProps} />
       </Layout>
     </QueryClientProvider>

@@ -293,4 +293,13 @@ const Home = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Home",
+            description: "Portfolio of Monjurul Islam Ajad (Monjur Ajad). Tech Expert, Senior Software Engineer, and Team Lead. Specializing in FinTech, eCommerce Developer, POS, and Inventory systems.",
+        },
+    }
+}
+
 export default Home;

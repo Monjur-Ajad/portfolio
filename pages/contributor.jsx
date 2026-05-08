@@ -143,4 +143,13 @@ const Contributor = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Open Source Contributor",
+            description: "Explore the open-source contribution journey of Monjur Ajad. Committed to building the global developer ecosystem through code contributions and collaboration.",
+        },
+    }
+}
+
 export default Contributor;

@@ -143,4 +143,13 @@ const Packages = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Open Source Packages",
+            description: "Discover open-source Laravel packages developed by Monjur Ajad for payment integrations and modular application logic.",
+        },
+    }
+}
+
 export default Packages;

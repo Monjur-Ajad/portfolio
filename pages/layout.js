@@ -1,13 +1,21 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { HiHome, HiUser, HiCode, HiCube, HiBriefcase, HiFolderOpen, HiMail, HiBadgeCheck } from 'react-icons/hi';
 import {FaLinkedin, FaGithub, FaTwitter} from 'react-icons/fa';
 import {CONTACTS, SOCIAL_LINKS} from '../constants/constants';
 import Link from 'next/link';
 
-export default function Layout({ children }) {
+export default function Layout({ children, title, description, canonical }) {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const defaultTitle = "Monjur Ajad | Tech Expert, FinTech Architect & Senior Developer";
+  const defaultDescription = "Portfolio of Monjurul Islam Ajad - Senior Software Engineer, Team Lead, and FinTech Expert specializing in Laravel, Next.js, POS, and Inventory systems.";
+  const baseUrl = "https://monjurajad.com";
+  const currentUrl = canonical || `${baseUrl}${router.pathname}`;
+  
+  const keywords = "tech expert, engineer, developer, ecommerce developer, team lead, fintech expert, fintech, pos, inventory, monjur, ajad, monjurul islam, monjurul islam ajad";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +38,24 @@ export default function Layout({ children }) {
 
   return (
     <div className="min-h-screen bg-[#020617] text-white selection:bg-emerald-500 selection:text-black">
+      <Head>
+        <title>{title ? `${title} | Monjur Ajad` : defaultTitle}</title>
+        <meta name="description" content={description || defaultDescription} />
+        <meta name="keywords" content={keywords} />
+        <link rel="canonical" href={currentUrl} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={title ? `${title} | Monjur Ajad` : defaultTitle} />
+        <meta property="og:description" content={description || defaultDescription} />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title ? `${title} | Monjur Ajad` : defaultTitle} />
+        <meta name="twitter:description" content={description || defaultDescription} />
+      </Head>
+
       {/* Navbar */}
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-[#0b1120]/80 backdrop-blur-lg border-b border-white/5 py-3' : 'bg-[#0b1120] py-4'}`}>
         <div className="container mx-auto px-4 md:px-6">

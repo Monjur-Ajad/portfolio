@@ -124,4 +124,13 @@ const Projects = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Projects",
+            description: "Explore the portfolio of Monjur Ajad, featuring eCommerce platforms, FinTech solutions, and enterprise Inventory/POS systems.",
+        },
+    }
+}
+
 export default Projects;

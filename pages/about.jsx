@@ -128,4 +128,13 @@ const About = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "About Me",
+            description: "Learn more about Monjurul Islam Ajad, a Senior Software Engineer and Team Lead with expertise in FinTech, POS systems, and scalable web architectures.",
+        },
+    }
+}
+
 export default About;

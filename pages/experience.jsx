@@ -73,4 +73,13 @@ const Experience = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Experience",
+            description: "Work experience of Monjur Ajad as a Senior Software Engineer and Team Lead in various multi-national and local tech firms.",
+        },
+    }
+}
+
 export default Experience;

@@ -184,4 +184,13 @@ const Contact = () => {
     );
 };
 
+export async function getStaticProps() {
+    return {
+        props: {
+            title: "Contact",
+            description: "Get in touch with Monjurul Islam Ajad for tech consultation, software development projects, or leadership roles.",
+        },
+    }
+}
+
 export default Contact;
