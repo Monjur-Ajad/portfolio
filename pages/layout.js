@@ -30,11 +30,26 @@ export default function Layout({ children, title, description, canonical }) {
     const trackVisit = async () => {
       try {
         const pageName = title || router.pathname.replace('/', '') || 'Home';
-        await fetch(`https://monjurajad.com/backend/api/views.php?page=${encodeURIComponent(pageName)}`);
+
+        const payload = {
+          page:     pageName,
+          screen:   `${window.screen.width}x${window.screen.height}`,
+          language: navigator.language || 'Unknown',
+          referrer: document.referrer || '',
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
+        };
+
+        await fetch('https://monjurajad.com/backend/api/views.php', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload),
+        });
+
       } catch (error) {
         console.error('Tracking failed:', error);
       }
     };
+
     trackVisit();
   }, [router.pathname]);
 
